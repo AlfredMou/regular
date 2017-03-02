@@ -510,10 +510,10 @@ walkers.component = function(ast, options){
       if( !(isolate & 2) ) 
         this.$watch(value, (function(name, val){
           this.data[name] = val;
-        }).bind(component, name), OPTIONS.SYNC)
+        }).bind(component, name))
       if( value.set && !(isolate & 1 ) ) 
         // sync the data. it force the component don't trigger attr.name's first dirty echeck
-        component.$watch(name, self.$update.bind(self, value), OPTIONS.INIT);
+        component.$watch(name, self.$update.bind(self, value), OPTIONS.SYNC);
     }
   }
   if(is && is.type === 'expression'  ){
