@@ -4119,7 +4119,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var node = document.createTextNode("");
 	  this.$watch(ast, function(newval){
 	    dom.text(node,  newval == null? "": String(newval) );
-	  }, OPTIONS.STABLE_INIT )
+	  }, {init: true})
 	  return node;
 	}
 	walkers.text = function(ast, options){
@@ -4388,7 +4388,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    if(value.type === 'expression' ){
 	      this.$watch(value, function(nvalue, old){
 	        dom.attr(element, name, nvalue);
-	      }, OPTIONS.STABLE_INIT);
+	      }, {init: true});
 	    }else{
 	      if(_.isBooleanAttr(name)){
 	        dom.attr(element, name, true);
