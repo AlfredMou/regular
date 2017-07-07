@@ -127,7 +127,7 @@ var Regular = function(definition, options){
 }
 
 // check if regular devtools hook exists
-var devtools = !!window?window.__REGULAR_DEVTOOLS_GLOBAL_HOOK__:undefined;
+var devtools = typeof window!== "undefined"?window.__REGULAR_DEVTOOLS_GLOBAL_HOOK__:undefined;
 if (devtools) {
   Regular.prototype.devtools = devtools;
 }
