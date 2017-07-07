@@ -1612,7 +1612,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	// check if regular devtools hook exists
-	var devtools = window.__REGULAR_DEVTOOLS_GLOBAL_HOOK__;
+	var devtools = !!window?window.__REGULAR_DEVTOOLS_GLOBAL_HOOK__:undefined;
 	if (devtools) {
 	  Regular.prototype.devtools = devtools;
 	}
